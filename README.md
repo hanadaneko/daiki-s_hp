@@ -34,3 +34,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## MEMO
+- Google Search Consoleをする
+  - https://search.google.com/search-console/welcome?utm_source=about-page
+- SEO対策 
+- METAデータを決めてもらう
+
+## 命名規則
+- 関数・コンポーネント名：アッパーキャメルケース
+- 定数：全大文字
+- Style
+  - Styled+用途+pc/sp＋部品名(StyledHeaderItemsPcTypograghy)
