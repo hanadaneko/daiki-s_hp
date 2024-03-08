@@ -1,3 +1,7 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "no-console": "off", // console.log()の使用を許可する
+    "semi": ["error", "never"] //　文末にセミコロンを付けない
+  }
 }
