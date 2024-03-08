@@ -41,6 +41,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - SEO対策 
 - METAデータを決めてもらう
 
+- IpadMINIがPC版でよく見えるラインにする
+
 ## 命名規則
 - 関数・コンポーネント名：アッパーキャメルケース
 - 定数：全大文字

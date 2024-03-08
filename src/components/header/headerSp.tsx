@@ -7,21 +7,11 @@ import Image from "next/image";
 export default function HeaderSp(){
     console.log("HeaderSp")
     return(
-        <>
-            <AppBar position="static">
-                <MarginY16/>
-                <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{pr:"16px"}} >
-                    <Image src={"/sample-logo.png"} alt={"sample-logo"} width={200} height={60}/>
-                    <Stack direction="row" spacing={4}>
-                        <StyledHeaderItemsPcTypograghy>内部リンクSP</StyledHeaderItemsPcTypograghy>
-                        <StyledHeaderItemsPcTypograghy>内部リンク2</StyledHeaderItemsPcTypograghy>
-                        <StyledHeaderItemsPcTypograghy>内部リンク3</StyledHeaderItemsPcTypograghy>
-                        <StyledHeaderItemsPcTypograghy>内部リンク4</StyledHeaderItemsPcTypograghy>
-                    </Stack>
-                    {/* <MarginX16/> */}
-                </Stack>
-                <MarginY16/>
-            </AppBar>
-        </>
+        <Stack direction="row" spacing={4}>
+            <StyledHeaderItemsPcTypograghy>内部リンクSP</StyledHeaderItemsPcTypograghy>
+            <StyledHeaderItemsPcTypograghy>内部リンク2</StyledHeaderItemsPcTypograghy>
+            <StyledHeaderItemsPcTypograghy>内部リンク3</StyledHeaderItemsPcTypograghy>
+            <StyledHeaderItemsPcTypograghy>内部リンク4</StyledHeaderItemsPcTypograghy>
+        </Stack>
     )
 }
