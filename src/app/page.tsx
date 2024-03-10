@@ -5,19 +5,20 @@ import { Stack, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import BusinessIntroduction from "@/components/businessIntroduction/businessIntroduction";
 import { useEffect } from "react";
+import { MarginY16, MarginY32 } from "@/style/spacing";
 // import preliminaryPhoto from "@/public/preliminaryPhoto.png";
 
 export default function Home() {
-  const isPc = useMediaQuery("(min-width: 600px)");
+  const isPc = useMediaQuery("(min-width: 570px)");
   useEffect(() => {
+    const head = document.getElementsByTagName("head")[0] as HTMLElement;
     const script = document.createElement("script");
-    script.src = "https://form.run/js/v2/embed.js";
-    script.async = true;
-    document.body.appendChild(script);
+    script.src = "https://sdk.form.run/js/v2/embed.js";
+    head.appendChild(script);
     return () => {
-      document.body.removeChild(script);
+      head.removeChild(script);
     };
-  });
+  }, []);
   return (
     <OriginalTheme>
       <Stack alignItems="center">
@@ -33,14 +34,14 @@ export default function Home() {
             style={{ width: "100%", height: "auto" }}
           />
         </Stack>
-        <BusinessIntroduction />
-
-        <div
-          className="formrun-embed"
-          data-formrun-form="@hanadaneko--hATCHzAsbGpIGBlrjh1R"
-          data-formrun-redirect="true"
-        ></div>
+        <MarginY32 />
+        <BusinessIntroduction isPc={isPc} />
       </Stack>
+      <div
+        className="formrun-embed"
+        data-formrun-form="@hanadaneko--hATCHzAsbGpIGBlrjh1R"
+        data-formrun-redirect="true"
+      />
     </OriginalTheme>
   );
 }
