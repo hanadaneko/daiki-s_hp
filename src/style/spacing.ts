@@ -23,6 +23,13 @@ export const MarginY32 = styled(Stack)({
   marginRight: "0px",
 }) as OverridableComponent<StackTypeMap<any, "div">>;
 
+export const MarginY64 = styled(Stack)({
+  marginTop: "64px",
+  marginBottom: "0px",
+  marginLeft: "0px",
+  marginRight: "0px",
+}) as OverridableComponent<StackTypeMap<any, "div">>;
+
 export const MarginX16 = styled(Stack)({
   marginTop: "0px",
   marginBottom: "0px",

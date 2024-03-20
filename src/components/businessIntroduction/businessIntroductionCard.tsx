@@ -1,3 +1,12 @@
+import {
+  StyledBusinessIntroductionCard,
+  StyledBusinessIntroductionCardContent,
+} from "@/style/card";
+import { MarginY8 } from "@/style/spacing";
+import {
+  StyledBusinessIntroductionCardDiscriptionTypograghy,
+  StyledBusinessIntroductionCardTitleTypograghy,
+} from "@/style/typograghy";
 import { Card, CardContent, CardMedia } from "@mui/material";
 import Image from "next/image";
 
@@ -13,7 +22,7 @@ export default function BusinessIntroductionCard({
   description,
 }: BusinessIntroductionCardProps) {
   return (
-    <Card>
+    <StyledBusinessIntroductionCard>
       {/* public\preliminaryPhoto.pngを表示 */}
       <Image
         src={image}
@@ -23,10 +32,15 @@ export default function BusinessIntroductionCard({
         style={{ width: "100%", height: "auto" }}
       />
       {/* <CardMedia image="../preliminaryPhoto.png" title="preliminaryPhoto" /> */}
-      <CardContent>
-        <h2>{title}</h2>
-        <p>{description}</p>
-      </CardContent>
-    </Card>
+      <StyledBusinessIntroductionCardContent>
+        <StyledBusinessIntroductionCardTitleTypograghy>
+          {title}
+        </StyledBusinessIntroductionCardTitleTypograghy>
+        <MarginY8 />
+        <StyledBusinessIntroductionCardDiscriptionTypograghy>
+          {description}
+        </StyledBusinessIntroductionCardDiscriptionTypograghy>
+      </StyledBusinessIntroductionCardContent>
+    </StyledBusinessIntroductionCard>
   );
 }

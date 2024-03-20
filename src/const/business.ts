@@ -40,6 +40,7 @@ export const BUSINESS_INTRODUCTION = [
 
 // ビジネスロジック
 export const BUSINESS_LOGIC_INTRODUCTION = {
+  img: "/community.png",
   title: "コミュニティ×ビジネス",
   overView:
     "ファンマーケティングを通して、コミュニティ形成をし、そこにビジネスを掛け合わせています。特徴として、先にコミュニティ形成を集中して行い、認知と顧客を獲得した状態で、コミュニティが求めているサービスを事業化しています。",
