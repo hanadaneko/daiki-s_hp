@@ -1,25 +1,17 @@
 import { Grid, Stack } from "@mui/material";
 import { BUSINESS_LOGIC_INTRODUCTION } from "@/const/business";
-import Image from "next/image";
-import { relative } from "path";
 import {
   StyledBusinessLogicIntroductionDiscriptionTypograghy,
   StyledBusinessLogicIntroductionOverViewTypograghy,
   StyledBusinessLogicIntroductionSubTitleTypograghy,
   StyledBusinessLogicIntroductionTitleTypograghy,
 } from "@/style/typograghy";
-import { MarginY16, MarginY32 } from "@/style/spacing";
+import { MarginX16, MarginY16, MarginY32 } from "@/style/spacing";
 
-interface BusinessLogicIntroductionProps {
-  isPc: boolean;
-}
-
-export default function BusinessLogicIntroduction(
-  isPc: BusinessLogicIntroductionProps
-) {
+export default function BusinessLogicIntroduction() {
   return (
-    <Grid container spacing={2} alignItems="center" sx={{ px: "10px" }}>
-      <Grid item xs={12} sm={5}>
+    <Grid container spacing={4} alignItems="center" sx={{ px: "10px" }}>
+      <Grid item xs={12} sm={6} md={5}>
         <img
           src={BUSINESS_LOGIC_INTRODUCTION.img}
           alt="preliminaryPhoto"
@@ -30,7 +22,7 @@ export default function BusinessLogicIntroduction(
 
       <MarginY16 />
 
-      <Grid item xs={12} sm={7}>
+      <Grid item xs={12} sm={6} md={7}>
         <StyledBusinessLogicIntroductionTitleTypograghy>
           {BUSINESS_LOGIC_INTRODUCTION.title}
         </StyledBusinessLogicIntroductionTitleTypograghy>

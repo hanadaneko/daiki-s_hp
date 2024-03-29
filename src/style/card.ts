@@ -9,7 +9,6 @@ import { OverridableComponent } from "@mui/material/OverridableComponent";
 
 export const StyledBusinessIntroductionCard = styled(Card)({
   width: "100%",
-  //   height: "auto",
   height: "98%",
   marginBottom: "16px",
   display: "flex",
@@ -22,5 +21,4 @@ export const StyledBusinessIntroductionCardContent = styled(CardContent)({
   padding: "20px",
   display: "1 1 auto",
   flexDirection: "column",
-  //   flexGrow: 1,
 }) as OverridableComponent<CardContentTypeMap<any, "div">>;
