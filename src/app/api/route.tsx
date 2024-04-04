@@ -35,10 +35,6 @@ export async function GET() {
     : [];
   console.log(rssPosts);
 
-  return new Response(rssPosts, {
-    headers: {
-      "Content-Type": "application/rss+xml",
-      "Access-Control-Allow-Origin": "*",
-    },
-  });
+  return new Response(JSON.stringify(rssPosts));
+  //   return rssPosts;
 }

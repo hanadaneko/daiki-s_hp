@@ -94,6 +94,24 @@ export const StyledCarrerTimeLineDiscriptionTypograghy = styled(Typography)(
   })
 ) as OverridableComponent<TypographyTypeMap<any, "p">>;
 
+// Media
+export const StyledMediaTitleTypograghy = styled(Typography)(({ theme }) => ({
+  fontWeight: theme.typography.fontWeightBold,
+  fontSize: "24px",
+})) as OverridableComponent<TypographyTypeMap<any, "h2">>;
+
+export const StyledMediaCardTitleTypograghy = styled(Typography)(
+  ({ theme }) => ({
+    fontWeight: theme.typography.fontWeightBold,
+    fontSize: "16px",
+  })
+) as OverridableComponent<TypographyTypeMap<any, "h2">>;
+
+export const StyledMediaDateTypograghy = styled(Typography)(({ theme }) => ({
+  fontWeight: theme.typography.fontWeightRegular,
+  fontSize: "14px",
+})) as OverridableComponent<TypographyTypeMap<any, "p">>;
+
 // contact form
 export const StyledContactFormTitleTypograghy = styled(Typography)(
   ({ theme }) => ({

@@ -16,6 +16,7 @@ import Footer from "@/components/footer/footer";
 // import { getAllData } from "./api";
 import axios from "axios";
 import Media from "@/components/media/media";
+import Contact from "@/components/contact/constct";
 // import preliminaryPhoto from "@/public/preliminaryPhoto.png";
 
 export default function Home() {
@@ -48,39 +49,24 @@ export default function Home() {
             style={{ width: "100%", height: "auto" }}
           />
         </Stack>
-
         <MarginY64 />
 
-        {/* ビジネス紹介 */}
-        <Business />
+        <Stack maxWidth="1200px">
+          {/* ビジネス紹介 */}
+          <Business />
+          <MarginY64 />
 
-        <MarginY64 />
+          {/* 自己紹介 */}
+          <Myself />
+          <MarginY64 />
 
-        {/* 自己紹介 */}
-        <Myself />
-
-        <MarginY64 />
-
-        <Media />
+          {/* blog欄 */}
+          <Media />
+        </Stack>
       </Stack>
 
       <MarginY64 />
-
-      <Stack>
-        {/*  フォームラン (お問い合わせフォーム) */}
-        <StyledBasicDivider />
-        <MarginY32 />
-        <Stack alignItems="center">
-          <StyledContactFormTitleTypograghy id="contact">
-            Contact
-          </StyledContactFormTitleTypograghy>
-        </Stack>
-        <div
-          className="formrun-embed"
-          data-formrun-form="@hanadaneko--hATCHzAsbGpIGBlrjh1R"
-          data-formrun-redirect="true"
-        />
-      </Stack>
+      <Contact />
 
       <MarginY32 />
       <Footer />

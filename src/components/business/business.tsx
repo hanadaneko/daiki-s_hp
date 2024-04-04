@@ -8,7 +8,7 @@ import { StyledBusinessIntroductionTitleTypograghy } from "@/style/typograghy";
 
 export default function Business() {
   return (
-    <StyledBusinessStack maxWidth="1200px">
+    <StyledBusinessStack>
       <MarginY32 />
       <Stack alignItems="center">
         <StyledBusinessIntroductionTitleTypograghy id="business">

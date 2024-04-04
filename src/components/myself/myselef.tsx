@@ -10,7 +10,7 @@ import Carrer from "@/components/myself/carrer/carrer";
 
 export default function Myself() {
   return (
-    <StyledMyselfStack maxWidth="1200px">
+    <StyledMyselfStack>
       <MarginY32 />
       <Stack alignItems="center">
         <StyledMyselfTitleTypograghy id="about">

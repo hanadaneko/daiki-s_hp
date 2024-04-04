@@ -1,18 +1,41 @@
 import axios from "axios";
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextResponse } from "next/server";
+import { parseStringPromise } from "xml2js";
 
-async function fetchNoteRss() {
-  const response = await axios.get("https://note.com/gondodaiki/rss");
-  return response;
+export interface RssPost {
+  title: string;
+  link: string;
+  publishedAt: string;
+  thumbnail?: string;
 }
 
-export async function getNoteData(req: NextApiRequest, res: NextApiResponse) {
-  const response = await fetchNoteRss();
-  res.setHeader("Content-Type", "application/rss+xml");
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  if (response.status !== 200) {
-    return [];
-  }
+export async function NoteDataGet() {
+  const res = await axios.get("https://note.com/gondodaiki/rss");
+  const xml = res.data;
+  const parsedXml = await parseStringPromise(xml);
+  //   const rssPosts = parsedXml.rss.channel[0].item;
 
-  return response.data;
+  //   const res = "http://localhost:3000/api/note-rss-proxy";
+
+  const rssPosts = parsedXml.rss.channel[0].item
+    ? parsedXml.rss.channel[0].item.map((entry: any): RssPost => {
+        const mediaThumbnail = entry["media:thumbnail"]
+          ? entry["media:thumbnail"][0]
+          : undefined;
+        const enclosureUrl = entry.enclosure
+          ? entry.enclosure[0].$.url
+          : undefined;
+        const channelLink = parsedXml.rss.channel[0].link[0];
+
+        return {
+          title: entry.title[0],
+          link: entry.link[0],
+          publishedAt: new Date(entry.pubDate[0]).toISOString(),
+          thumbnail: mediaThumbnail || enclosureUrl || undefined,
+        };
+      })
+    : [];
+  console.log(rssPosts);
+
+  return rssPosts;
 }

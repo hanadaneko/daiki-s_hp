@@ -1,46 +1,63 @@
-import { Stack } from "@mui/material";
+// "use client";
+import { NoteDataGet, RssPost } from "@/libs/note/note";
+import { StyledMediaCard } from "@/style/card";
+import { Grid, Stack } from "@mui/material";
 import axios from "axios";
+import { GetStaticProps } from "next";
+import { use, useEffect, useState } from "react";
 import useSWR, { Fetcher } from "swr";
-
-const sampleData = [
-  {
-    title: ["正しいシャンプーの選び方"],
-    description: [
-      `<p name="eb8a7c0e-8b06-4cfc-ad54-5b8dcedb36b7" id="eb8a7c0e-8b06-4cfc-ad54-5b8dcedb36b7">おはようございます。<br>権藤大樹です。<br>大阪で飲食店経営をやったり、シャンプー専門の小売店をやったり、ヘッドスパのお店をやったりしています。</p><p name="bd9bd679-19ce-4105-a241-8542d8681fd9" id="bd9bd679-19ce-4105-a241-8542d8681fd9">本日は、シャンプー専門店をやっている僕が、思う正しいシャンプーの選び方についてのポイントを述べていきたいと思っています。</p><br/><a href='https://note.com/gondodaiki/n/ne21299da3874'>続きをみる</a>`,
-    ],
-    "note:creatorImage": [
-      "https://assets.st-note.com/production/uploads/images/40553099/profile_dad2842cd6322211da4e0d6a7bce75e3.jpg?fit=bounds&format=jpeg&quality=85&width=330",
-    ],
-    "note:creatorName": ["権藤大樹｜Link代表"],
-    pubDate: ["Thu, 25 Jan 2024 14:18:17 +0900"],
-    link: ["https://note.com/gondodaiki/n/ne21299da3874"],
-    guid: ["https://note.com/gondodaiki/n/ne21299da3874"],
-  },
-];
-
-interface Post {
-  title: string[];
-  description: string[];
-  "note:creatorImage": string[];
-  "note:creatorName": string[];
-  pubDate: string[];
-  link: string[];
-  guid: string[];
-}
+import { parseStringPromise } from "xml2js";
+import MediaCard from "@/components/media/mediaCard";
+import { StyledMediaTitleTypograghy } from "@/style/typograghy";
+import { MarginY16, MarginY24, MarginY32 } from "@/style/spacing";
+import { BACKUP_NOTE_DATA } from "@/const/backupNoteData";
 
 export default function Media() {
-  const fetcher = (url: string) => axios.get(url).then((res) => res.data);
-  const { data, error, isLoading } = useSWR("/api", fetcher);
-  console.log(data);
+  const [data, setData] = useState<RssPost[]>([]);
 
-  const rssPosts = data?.rss.channel[0].item;
-  console.log("test" + rssPosts);
+  useEffect(() => {
+    const fetchData = async () => {
+      await fetch("/api")
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("dataだよ " + JSON.stringify(data));
+          setData(data);
+          //   return viewData;
+        });
+    };
+    fetchData();
+  }, []);
+
+  //   dataのうち最初の3つを取得
+  const posts = data.slice(0, 4);
 
   return (
-    <Stack>
-      {/* <button onClick={onClick}>Get Data</button> */}
-      {/* 多重配列をMAPして title、media,descriptionを取り出して表示*/}
-      {/* {dataView} */}
+    <Stack alignItems="center" sx={{ mx: "20px" }}>
+      <StyledMediaTitleTypograghy>Blog</StyledMediaTitleTypograghy>
+      <MarginY32 />
+      <Grid container spacing={2}>
+        {posts.map((post: RssPost) => (
+          <Grid item xs={12} sm={6} key={post.title}>
+            <MediaCard
+              title={post.title}
+              link={post.link}
+              publishedAt={post.publishedAt}
+              thumbnail={post.thumbnail}
+            />
+          </Grid>
+        ))}
+        {posts.length === 0 &&
+          BACKUP_NOTE_DATA.map((data) => (
+            <Grid item xs={12} sm={6} key={data.title}>
+              <MediaCard
+                title={data.title}
+                link={data.link}
+                publishedAt={data.publishedAt}
+                thumbnail={data.thumbnail}
+              />
+            </Grid>
+          ))}
+      </Grid>
     </Stack>
   );
 }

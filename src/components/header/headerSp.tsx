@@ -56,7 +56,7 @@ export default function HeaderSp(headerItems: HeaderSpProps) {
 
         {headerItems.headerItems.map((item, index) => {
           return (
-            <Stack sx={{ px: "30px" }}>
+            <Stack sx={{ px: "30px" }} key={index}>
               <Scroll to={item} smooth={true} duration={300}>
                 <StyledHeaderItemsPcTypograghy
                   key={index}
