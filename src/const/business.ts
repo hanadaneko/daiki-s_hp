@@ -1,37 +1,37 @@
 // ビジネス紹介
 export const BUSINESS_INTRODUCTION = [
   {
-    image: "/preliminaryPhoto.png",
+    image: "/business_image/bar.jpeg",
     title: "飲食業",
     description:
       "コミュニティとの相性の良い飲食店を経営しています。この先、居酒屋・立ち飲み・カフェ・バー・バルなどの飲食店経営を志望している仲間たちと作っているお店です。",
   },
   {
-    image: "/preliminaryPhoto.png",
+    image: "/business_image/icmo.JPG",
     title: "小売業",
     description:
       "コミュニティとの相性が抜群に良い小売店を経営しています。この先、各種小売店経営を志望している仲間たちと作っているお店です。",
   },
   {
-    image: "/preliminaryPhoto.png",
+    image: "/business_image/headspa.JPG",
     title: "美容事業",
     description:
       "コミュニティとの相性が良い美容サービス店を経営しています。この先、ヘッドスパ・まつエク・ネイルなどの美容サービス店経営を志望している仲間たちと作っているお店です。",
   },
   {
-    image: "/preliminaryPhoto.png",
+    image: "/business_image/canvas.jpg",
     title: "レンタルスペース事業",
     description:
       "コミュニティとの相性が良いレンタルスペース事業を経営しています。この先、コワーキングスペース・貸し会議室・民泊経営を志望している仲間たちと作っているお店です。",
   },
   {
-    image: "/preliminaryPhoto.png",
+    image: "/business_image/consulting.jpg",
     title: "ビジネスコンサルティング業",
     description:
       "自身の経験を活かした、コミュニティ形成から始める事業の立ち上げのサポートを行っております。独立起業、フリーランスへのサポートを通して、多くの起業家を輩出することにより社会に貢献していきます。",
   },
   {
-    image: "/preliminaryPhoto.png",
+    image: "/business_image/event.jpg",
     title: "講演会・イベント事業",
     description:
       "仕事にもプライベートにも使えるコミュニケーションをテーマにした講演会。店舗スタッフとお客様の交流の場でもあるスポーツ大会など、毎月多くの方に参加頂いています。",

@@ -29,14 +29,16 @@ export default function BusinessIntroductionCard({
         alt="preliminaryPhoto"
         width={1280}
         height={852}
-        style={{ width: "100%", height: "auto" }}
+        style={{ width: "100%", height: "250px" }}
       />
       {/* <CardMedia image="../preliminaryPhoto.png" title="preliminaryPhoto" /> */}
       <StyledBusinessIntroductionCardContent>
         <StyledBusinessIntroductionCardTitleTypograghy>
           {title}
         </StyledBusinessIntroductionCardTitleTypograghy>
+
         <MarginY8 />
+
         <StyledBusinessIntroductionCardDiscriptionTypograghy>
           {description}
         </StyledBusinessIntroductionCardDiscriptionTypograghy>
