@@ -14,7 +14,7 @@ export const BUSINESS_INTRODUCTION = [
   },
   {
     image: "/preliminaryPhoto.png",
-    title: "サービス業",
+    title: "美容事業",
     description:
       "コミュニティとの相性が良い美容サービス店を経営しています。この先、ヘッドスパ・まつエク・ネイルなどの美容サービス店経営を志望している仲間たちと作っているお店です。",
   },
@@ -32,9 +32,9 @@ export const BUSINESS_INTRODUCTION = [
   },
   {
     image: "/preliminaryPhoto.png",
-    title: "運送業",
+    title: "レンタルスペース事業",
     description:
-      "軽貨物にFC参入しています。ネットや、スマホ、ECの発展により市場規模が伸びている業界での雇用への貢献を目指します。",
+      "コミュニティとの相性が良いレンタルスペース事業を経営しています。この先、コワーキングスペース・貸し会議室・民泊経営を志望している仲間たちと作っているお店です。",
   },
 ];
 
